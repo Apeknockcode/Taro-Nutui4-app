@@ -1,0 +1,113 @@
+<template>
+    <view class="goodsBox">
+
+        <view class="leftIcon">限时特价</view>
+        <view class="goods-images">
+            <!--商品主图位子 -->
+        </view>
+        <view class="goodsNamePrice">
+            <view class="name">情定爱琴海</view>
+            <view class="price">
+                <view class="newPrice">¥188</view>
+                <view class="oldPrice">¥288</view>
+            </view>
+            <view class="shopCart">
+                <Cart color='#fff' />
+            </view>
+        </view>
+
+    </view>
+</template>
+
+<script>
+import { Cart } from "@nutui/icons-vue-taro"
+export default {
+    components: { Cart },
+    setup() {
+
+
+        return {}
+    }
+}
+</script>
+
+<style lang="scss">
+.goodsBox {
+    flex-basis: 240rpx;
+    width: 240rpx;
+    height: auto;
+    min-height: 300rpx;
+    // background: red;
+    border-radius: 6rpx;
+    position: relative;
+    border: 1rpx solid #f4efef;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    .goods-images {
+        width: 100%;
+        height: auto;
+        min-height: calc(300rpx - 40rpx);
+        background: #c3c0c0;
+        border-radius: 6rpx 6rpx 0 0;
+        margin-bottom: 10rpx;
+    }
+
+    .leftIcon {
+        position: absolute;
+        top: 0rpx;
+        border-radius: 4rpx 0 4rpx 0rpx;
+        left: 0rpx;
+        font-size: $font22;
+        color: #fff;
+        padding: 4rpx 8rpx;
+        background: linear-gradient(to top left, $themesColorOwner, $viceThemesColor);
+    }
+
+    .goodsNamePrice {
+        padding: 4rpx 8rpx;
+
+        .name {
+            font-size: $font26;
+            color: themeTextColor-1;
+            margin-bottom: 4rrpx;
+        }
+
+        .price {
+            font-size: $fontP20;
+            color: $themeTextColor-2;
+            display: flex;
+            align-items: flex-end;
+
+            .newPrice {
+                color: $themesColorOwner;
+                font-size: $fontP30;
+                margin-right: 4rpx;
+            }
+
+            .oldPrice {
+                margin-bottom: 4rpx;
+                text-decoration: line-through;
+            }
+
+        }
+
+        .shopCart {
+            position: absolute;
+            bottom: 20rpx;
+            right: 16rpx;
+            width: 48rpx;
+            height: 48rpx;
+            background: $themesColorOwner;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            border-radius: 100%;
+            padding: 2rpx;
+            font-size: 14rpx;
+        }
+
+    }
+}
+</style>

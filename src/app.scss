@@ -1,0 +1,52 @@
+
+
+page {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+view {
+  box-sizing: border-box;
+}
+
+// 垂直居中
+.cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// 水平居中
+.ch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 分割边框线
+.line{
+  border: 1rpx solid #cfcfcf;
+}
+.mb10{
+  margin-bottom: 10rpx;
+}
+
+.mr10{
+  margin-right: 10rpx;
+}
+.scroll {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.scroll::-webkit-scrollbar {
+  display:none
+} 
+
+
+
+
