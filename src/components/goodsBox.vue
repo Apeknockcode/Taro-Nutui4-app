@@ -34,29 +34,32 @@ export default {
 <style lang="scss">
 .goodsBox {
     flex-basis: 240rpx;
+    
     width: 240rpx;
+    min-width: 240rpx;
     height: auto;
     min-height: 300rpx;
     // background: red;
-    border-radius: 6rpx;
+    border-radius: 12rpx;
     position: relative;
     border: 1rpx solid #f4efef;
     flex-shrink: 0;
     white-space: nowrap;
+    margin-bottom: 20rpx;
 
     .goods-images {
         width: 100%;
         height: auto;
         min-height: calc(300rpx - 40rpx);
         background: #c3c0c0;
-        border-radius: 6rpx 6rpx 0 0;
+        border-radius: 12rpx 12rpx 0 0;
         margin-bottom: 10rpx;
     }
 
     .leftIcon {
         position: absolute;
         top: 0rpx;
-        border-radius: 4rpx 0 4rpx 0rpx;
+        border-radius: 12rpx 0 12rpx 0rpx;
         left: 0rpx;
         font-size: $font22;
         color: #fff;

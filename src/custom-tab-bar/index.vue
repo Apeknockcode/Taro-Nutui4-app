@@ -1,6 +1,6 @@
 
 <template>
-  <nut-tabbar @tab-switch="tabSwitch" v-model="active">
+  <nut-tabbar @tab-switch="tabSwitch" v-model="active" safe-area-inset-bottom>
     <nut-tabbar-item tab-title="首页">
       <template #icon="props">
         <img v-if="props.active" :src="icon.active" />
@@ -52,12 +52,13 @@ export default {
       }
       if (index == 2) {
         Taro.switchTab({
-          url: '/pages/personalcenter/personalcenter',
+          url: '/pages/shopcart/shopcart',
         })
       }
       if (index == 3) {
         Taro.switchTab({
-          url: '/pages/shopcart/shopcart',
+         
+          url: '/pages/personalcenter/personalcenter',
         })
       }
     }

@@ -34,7 +34,7 @@ export default {
     padding: 20px 10px 10px 10px;
 
     .last-title {
-        font-size: $fontP20;
+        font-size: $font24;
         color: $themeTextColor-2;
         display: flex;
         justify-content: space-between;

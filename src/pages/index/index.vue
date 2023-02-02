@@ -51,6 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .header-address {
   display: flex;
   padding: 0 10rpx 8rpx 10rpx;
@@ -70,5 +71,6 @@ export default {
   z-index: 2;
   position: absolute;
   overflow: hidden;
+  padding-bottom: 180rpx;
 }
 </style>
