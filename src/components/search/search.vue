@@ -10,7 +10,7 @@
 
 <script>
 import { toRefs, reactive, computed } from 'vue';
-import { Search2 } from '@nutui/icons-vue';
+import { Search2 } from '@nutui/icons-vue-taro';
 export default {
     props: {
         searchValue: {

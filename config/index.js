@@ -33,6 +33,10 @@ const config = {
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {
   },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/static': path.resolve(__dirname, '..', 'src/static'),
+  },
   copy: {
     patterns: [
     ],

@@ -8,11 +8,14 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Address: typeof import('./src/components/address/address.vue')['default']
-    Container: typeof import('./src/components/container/index.vue')['default']
     Content: typeof import('./src/components/content/index.vue')['default']
     GoodsBox: typeof import('./src/components/goodsBox.vue')['default']
     GoodSort: typeof import('./src/components/goodSort/goodSort.vue')['default']
     Item: typeof import('./src/components/goodSort/item.vue')['default']
+    NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
+    NutBadge: typeof import('@nutui/nutui-taro')['Badge']
+    NutCell: typeof import('@nutui/nutui-taro')['Cell']
+    NutCellGroup: typeof import('@nutui/nutui-taro')['CellGroup']
     NutCol: typeof import('@nutui/nutui-taro')['Col']
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']

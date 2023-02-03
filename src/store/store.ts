@@ -1,7 +1,7 @@
 import { createStore } from "vuex"
 
 const state = {
-  selected: 0
+  selected: 3
 }
 
 const mutations = {
