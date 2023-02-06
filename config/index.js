@@ -63,6 +63,9 @@ const config = {
         resolvers: [NutUIResolver()]
       }))
     },
+    miniCssExtractPluginOption: {
+      ignoreOrder: true,
+    },
     postcss: {
       pxtransform: {
         enable: true,

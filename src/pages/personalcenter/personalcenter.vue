@@ -197,7 +197,7 @@ export default {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10rpx;
+            padding: 0 30rpx;
             padding-top: 100rpx;
 
             .title {

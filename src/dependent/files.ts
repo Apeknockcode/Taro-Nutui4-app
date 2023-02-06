@@ -1,5 +1,5 @@
 
-import { Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
+import { List,Category, CategoryPane,Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
 
 import type { App } from 'vue';
 
@@ -17,7 +17,7 @@ export function setupComponents(app: App<Element>) {
     .use(GridItem)
     .use(Searchbar)
     .use(Avatar).use(Badge)
-    
+    .use(Category).use(CategoryPane).use(List)
  
 
 }
