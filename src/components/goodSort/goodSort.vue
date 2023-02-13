@@ -1,7 +1,7 @@
 <template>
     
     <nut-grid :column-num="4" :border="border">
-        <nut-grid-item class="grid-item-box" v-for="item in sortArray" :key="item">
+        <nut-grid-item  class="grid-item-box" v-for="item in sortArray" :key="item">
             <sort :sort="item" />
         </nut-grid-item>
     </nut-grid>
@@ -12,6 +12,8 @@
 <script>
 import sort from "./item.vue"
 import { reactive, toRefs } from 'vue';
+// 引入静态资源
+import Sign from '@/static/images/Sign.png'
 export default {
     props: {
         border: {
@@ -26,20 +28,20 @@ export default {
         const sortArray = reactive(
             [
                 {
-                    icon: "icon iconfont icon-shopcart",
+                    icon: Sign,
                     iconName: '签到'
                 },
                 {
-                    icon: "icon iconfont icon-shopcart",
-                    iconName: '签到1'
+                    icon: Sign,
+                    iconName: '签到'
                 },
                 {
-                    icon: "icon iconfont icon-shopcart",
-                    iconName: '签到2'
+                    icon: Sign,
+                    iconName: '签到'
                 },
                 {
-                    icon: "icon iconfont icon-shopcart",
-                    iconName: '签到3'
+                    icon: Sign,
+                    iconName: '签到'
                 }
             ]
         )

@@ -1,7 +1,7 @@
 <template>
     <view class="sort-item">
         <view class="item-icon cv">
-            <i :class="sort.icon"></i>
+            <image class="image" :src="sort.icon"></image>
         </view>
         <view class="item-name">{{ sort.iconName }}</view>
     </view>
@@ -28,12 +28,14 @@ export default {
     width: inherit;
     height: inherit;
     .item-icon{
-        .icon{
-            font-size: $font48;
+        .image{
+            width: 100rpx;
+            height: 100rpx;
         }
         
     }
     .item-name{
+        text-align: center;
         font-size: $font24;
     }
    

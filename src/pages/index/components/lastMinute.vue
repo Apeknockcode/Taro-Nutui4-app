@@ -2,7 +2,7 @@
     <view class="lastMinute">
         <view class="last-title">
             <view class="title">限时抢购</view>
-            <view class="more">
+            <view class="more" @click="handleLastMinPage">
                 查看更多
                 <RectRight size="10" />
             </view>
@@ -14,17 +14,25 @@
 </template>
 
 <script>
-import goodsBox from "../../../components/goodsBox.vue"
+import goodsBox from "@/components/goodsBox.vue"
 import { RectRight } from "@nutui/icons-vue-taro";
+import Taro from '@tarojs/taro'
 export default {
     components: {
         goodsBox,
         RectRight
     },
     setup() {
+        const handleLastMinPage = () => {
 
+            Taro.navigateTo({
+                url: '/package/pages/lastMinutePage/index',
+            })
+        }
 
-        return {}
+        return {
+            handleLastMinPage
+        }
     }
 }
 </script>

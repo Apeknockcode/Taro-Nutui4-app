@@ -1,17 +1,22 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/classification/classification',
-    'pages/personalcenter/personalcenter',
-    'pages/shopcart/shopcart'
+    'pages/classification/index',
+    'pages/personalcenter/index',
+    'pages/shopcart/index'
   ],
   subPackages: [
     {
       "root": "package",
       "pages": [
-        "cat/cat",
-        "dog/dog"
-      ]
+        "pages/lastMinutePage/index",
+        "pages/goodDetailPage/index",
+        "pages/cardVoucherCenter/index",
+        "pages/myOrder/index",
+        "pages/orderResult/index",
+        "pages/order/index"
+      ],
+      // "independent": true
     }
   ],
   permission: {
@@ -30,23 +35,26 @@ export default defineAppConfig({
         selectedIconPath:'',
         pagePath: "pages/index/index",
         text: "首页"
-    }, {
-      iconPath:'',
-      selectedIconPath:'',
-      pagePath: "pages/classification/classification",
-      text: "分类"
-    }, {
-      iconPath:'',
-      selectedIconPath:'',
-      pagePath: "pages/shopcart/shopcart",
-      text: "购物车"
-    }, {
-      iconPath:'',
+      }, 
+      {
+        iconPath:'',
         selectedIconPath:'',
-        pagePath: "pages/personalcenter/personalcenter",
-        text: "我的"
-    }
-  ]
+        pagePath: "pages/classification/index",
+        text: "分类"
+      }, 
+      {
+        iconPath:'',
+        selectedIconPath:'',
+        pagePath: "pages/shopcart/index",
+        text: "购物车"
+      }, 
+      {
+        iconPath:'',
+          selectedIconPath:'',
+          pagePath: "pages/personalcenter/index",
+          text: "我的"
+      }
+    ]
   },
   
   window: {

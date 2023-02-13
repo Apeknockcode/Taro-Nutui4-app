@@ -1,6 +1,6 @@
 <template>
     <nut-category class="clasification" :category="category" @change="change">
-        <nut-category-pane :categoryChild="categoryChild" @onChange="onChange">
+        <nut-category-pane class="clasification-left" :categoryChild="categoryChild" @onChange="onChange">
         </nut-category-pane>
     </nut-category>
 </template>
@@ -48,6 +48,15 @@ export default {
         height: 100vh;
         overflow-y: auto;
         padding-bottom: 180rpx;
+    }
+
+    .nut-category__cateList>view:first-child {
+        height: 100vh;
+        background: #f2f1f1;
+    }
+
+    .nut-category__cateListLeft {
+        background: initial;
     }
 }
 </style>

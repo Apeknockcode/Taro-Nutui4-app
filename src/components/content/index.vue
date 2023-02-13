@@ -38,7 +38,7 @@ export default {
 <style lang="scss">
 
 .nut-tab-pane{
-    padding: 10rpx 10rpx;
+    padding: 10rpx 10rpx !important;
 }
 .contentGoods{
     .nut-col-gutter:first-child{

@@ -47,18 +47,17 @@ export default {
       }
       if (index == 1) {
         Taro.switchTab({
-          url: '/pages/classification/classification',
+          url: '/pages/classification/index',
         })
       }
       if (index == 2) {
         Taro.switchTab({
-          url: '/pages/shopcart/shopcart',
+          url: '/pages/shopcart/index',
         })
       }
       if (index == 3) {
         Taro.switchTab({
-         
-          url: '/pages/personalcenter/personalcenter',
+          url: '/pages/personalcenter/index',
         })
       }
     }

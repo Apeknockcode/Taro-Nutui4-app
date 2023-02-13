@@ -1,5 +1,5 @@
 
-import { List,Category, CategoryPane,Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
+import { Animate,Progress,InputNumber,Checkbox, CheckboxGroup,List,Category, CategoryPane,Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
 
 import type { App } from 'vue';
 
@@ -16,8 +16,16 @@ export function setupComponents(app: App<Element>) {
     .use(Grid)
     .use(GridItem)
     .use(Searchbar)
-    .use(Avatar).use(Badge)
-    .use(Category).use(CategoryPane).use(List)
- 
+    .use(Avatar)
+    .use(Badge)
+    .use(Category)
+    .use(CategoryPane)
+    .use(List)
+    .use(Checkbox)
+    .use(CheckboxGroup)
+    .use(InputNumber)
+    .use(Progress)
+    .use(Animate)
+
 
 }
