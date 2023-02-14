@@ -115,6 +115,7 @@
 
             </view>
         </view>
+        <waresSku />
         <waresTabbar />
     </view>
 </template>
@@ -125,6 +126,7 @@ import { Shop3, Clock, Jdl, Right } from '@nutui/icons-vue-taro';
 import waresTabbar from "./components/wares-tabbar.vue"
 import comment from "./components/comment.vue";
 import details from "@/static/images/goods.png"
+import waresSku from "./components/wares-sku.vue"
 export default {
     components: {
         waresTabbar,
@@ -132,7 +134,8 @@ export default {
         Clock,
         Jdl,
         Right,
-        comment
+        comment,
+        waresSku
     },
     setup() {
         const state = reactive({

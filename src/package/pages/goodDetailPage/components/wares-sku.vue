@@ -44,7 +44,7 @@ interface goodsTypes {
 export default {
     setup(props) {
         console.log("props",props)
-        const customBySlot = ref(false);
+        const customBySlot = ref(true);
         const showAddressPopup = ref(false);
         const data = reactive({
             sku: [],
