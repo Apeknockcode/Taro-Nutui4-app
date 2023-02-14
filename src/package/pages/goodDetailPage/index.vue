@@ -46,22 +46,99 @@
             </view>
 
         </view>
+        <view class="goods-info">
+
+            <nut-cell class="info-item ch">
+                <template v-slot:title>
+                    <view class="title">
+                        <view class="des ch">领券</view>
+                        <view class="use">
+                            <view class="Voucher">满150减20</view>
+                        </view>
+                    </view>
+                </template>
+                <template v-slot:link>
+                    <Right />
+                </template>
+            </nut-cell>
+            <nut-cell class="info-item ch">
+                <template v-slot:title>
+                    <view class="title">
+                        <view class="des ch">已选</view>
+                        <view class="use-size ">
+                            <view class="size ch">百香果</view>,
+                            <view class="size-weight ch">1.0磅(适合3~4人分享)</view>
+                        </view>
+                    </view>
+                </template>
+                <template v-slot:link>
+                    <Right />
+                </template>
+            </nut-cell>
+            <nut-cell class="info-item ch">
+                <template v-slot:title>
+                    <view class="title">
+                        <view class="des ch">配送</view>
+                        <view class="use-size ">
+                            <view class="size ch">到店自提</view>
+                        </view>
+                    </view>
+                </template>
+                <template v-slot:link>
+                    <Right />
+                </template>
+            </nut-cell>
+        </view>
+        <view class="split-line"></view>
+        <!-- 商品评价 -->
+        <view class="comments">
+            <view class="comment-header">
+                <view class="comment-name">商品评价</view>
+                <view class="comment-more ca">查看更多
+                    <Right :size="10" />
+                </view>
+            </view>
+            <view class="comment-list">
+                <comment />
+            </view>
+        </view>
+        <!-- 商品评价 -->
+        <view class="comments">
+            <view class="comment-header">
+                <view class="comment-name">商品详情</view>
+                <view class="comment-more ca">查看更多
+                    <Right :size="10" />
+                </view>
+            </view>
+            <view class="details-list">
+                <image class="waresImage" mode="scaleToFill" :src="details"></image>
+
+            </view>
+        </view>
+        <waresTabbar />
     </view>
 </template>
 
 <script lang="ts">
 import { reactive, toRefs } from "vue"
-import { Shop3, Clock, Jdl } from '@nutui/icons-vue-taro';
+import { Shop3, Clock, Jdl, Right } from '@nutui/icons-vue-taro';
+import waresTabbar from "./components/wares-tabbar.vue"
+import comment from "./components/comment.vue";
+import details from "@/static/images/goods.png"
 export default {
     components: {
+        waresTabbar,
         Shop3,
         Clock,
-        Jdl
+        Jdl,
+        Right,
+        comment
     },
     setup() {
         const state = reactive({
             page: 0,
-            current: 1
+            current: 1,
+            details: details
         });
         const changeSwiper = (index: number) => {
             state.current = index + 1;
@@ -73,7 +150,10 @@ export default {
 
 <style lang="scss">
 .goodsDetails {
-    width:100vw;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 180rpx;
 
     .goods-mainImage {
         .nut-swiper-item {
@@ -137,18 +217,98 @@ export default {
             margin-bottom: 30rpx;
         }
     }
-    .support{
+
+    .support {
         color: $themesColorOwner;
         font-size: $font24;
         display: flex;
         font-weight: normal;
-        .support-item{
+
+        .support-item {
             margin-bottom: 10rpx;
             display: flex;
             align-items: center;
             margin-right: 20rpx;
-            .nut-icon{
+
+            .nut-icon {
                 margin-right: 4rpx;
+            }
+        }
+    }
+
+    .info-item {
+        margin: 0rpx;
+        box-shadow: none;
+
+        .title {
+            display: flex;
+
+            .des {
+                margin-right: 20rpx;
+                font-size: $font24;
+            }
+
+            .use {
+                font-size: $fontP20;
+
+                .Voucher {
+                    background: url("https://gd-hbimg.huaban.com/2dc229e5c1401f3ecd7fda44727dd58eea00dcd7131b5-fv7hnO_fw658webp") no-repeat;
+                    background-size: 100% 100%;
+                    padding: 8rpx 16rpx;
+                    color: #fff;
+                }
+            }
+
+            .use-size {
+                font-size: $font28;
+                color: #000;
+                display: flex
+            }
+        }
+    }
+
+    .split-line {
+        width: 100vw;
+        height: 20rpx;
+        background: #FBFBFB;
+    }
+
+    .comments {
+        .comment-header {
+            padding: 20rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .comment-name {
+                font-size: $font28;
+                font-weight: bold;
+                border-left: 8rpx solid $themesColorOwner;
+                padding-left: 20rpx;
+            }
+
+            .comment-more {
+                font-size: $fontP20;
+                color: $themeTextColor-3;
+            }
+        }
+
+        .comment-list {
+            padding: 20rpx;
+
+
+        }
+
+        .details-list {
+            width: 100vw;
+            height: max-content;
+            padding: 0 20rpx;
+
+            .waresImage {
+                width: 100%;
+                height: 10000rpx;
+                object-fit: fill;
+                display: block;
             }
         }
     }

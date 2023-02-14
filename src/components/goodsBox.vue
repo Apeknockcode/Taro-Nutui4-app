@@ -1,5 +1,5 @@
 <template>
-    <view class="goodsBox">
+    <view class="goodsBox" @click="handleWaresPage">
 
         <view class="leftIcon">限时特价</view>
         <view class="goods-images">
@@ -21,12 +21,19 @@
 
 <script>
 import { Cart } from "@nutui/icons-vue-taro"
+import Taro from '@tarojs/taro'
 export default {
     components: { Cart },
     setup() {
 
-
-        return {}
+const handleWaresPage= ()=>{
+    Taro.navigateTo({
+                url: '/package/pages/goodDetailPage/index',
+            })
+}
+        return {
+            handleWaresPage
+        }
     }
 }
 </script>

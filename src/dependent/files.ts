@@ -1,5 +1,5 @@
 
-import { Animate,Progress,InputNumber,Checkbox, CheckboxGroup,List,Category, CategoryPane,Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
+import { Sku,Animate,Progress,InputNumber,Checkbox, CheckboxGroup,List,Category, CategoryPane,Badge,Avatar,Button, Toast,Swiper,SwiperItem ,Layout,Row,Col,Grid, GridItem,Searchbar } from '@nutui/nutui-taro';
 
 import type { App } from 'vue';
 
@@ -26,6 +26,5 @@ export function setupComponents(app: App<Element>) {
     .use(InputNumber)
     .use(Progress)
     .use(Animate)
-
-
+    .use(Sku)
 }
