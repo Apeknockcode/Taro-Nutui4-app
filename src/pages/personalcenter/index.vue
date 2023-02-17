@@ -20,14 +20,14 @@
         <view class="order">
             <view class="order-header">
                 <view class="title">我的订单</view>
-                <view class="all-order">
+                <view class="all-order" @click="handleOrderCenter">
                     全部订单
                     <RectRight size="12" />
                 </view>
             </view>
             <view class="order-sort">
                 <nut-row :gutter="20" class="orderList" type="flex" flex-wrap="wrap" justify="space-around">
-                    <nut-col class="orderList-item" :span="6" v-for="item in orderList" :key="'order'+item.key">
+                    <nut-col class="orderList-item" :span="6" v-for="item in orderList" :key="'order' + item.key">
                         <nut-badge :value="0">
                             <img class="image" :src="item.icon" alt="">
                         </nut-badge>
@@ -40,7 +40,7 @@
         <view class="order-line"></view>
         <view class="setting">
             <nut-cell-group>
-                <nut-cell v-for="item in setList" :key="'set'+item.key">
+                <nut-cell v-for="item in setList" :key="'set' + item.key" @click="handleGroup(item.key)">
                     <template v-slot:title>
                         <img class="setGroup" :src="item.icon" alt="">
                         <view class="name"> {{ item.name }} </view>
@@ -51,15 +51,20 @@
                 </nut-cell>
             </nut-cell-group>
         </view>
+
+        <nut-toast :msg="page.state.msg" :duration='3000' v-model:visible="page.state.show" :type="page.state.type"
+            @closed="page.methods.onClosed" :cover="page.state.cover" />
     </view>
 </template>
 
-<script>
+<script lang="ts">
 import { Date, RectRight } from "@nutui/icons-vue-taro"
 import { reactive, toRefs } from "vue";
+import Taro from '@tarojs/taro'
 export default {
     components: { Date, RectRight },
     setup() {
+
         const state = reactive(
             {
                 orderList: [
@@ -120,12 +125,60 @@ export default {
                         key: 6,
                         icon: require("../../static/images/image-36.png")
                     }
-                ]
+                ],
+
             }
         )
 
+        const page = {
+            state: reactive({
+                msg: 'toast',
+                type: 'text',
+                show: false,
+                cover: false,
+                title: '',
+                bottom: '',
+                center: true,
+            }),
+            methods: {
+                openToast: (type: string, msg: string, cover: boolean = false, title: string = '', bottom: string = '', center: boolean = true) => {
+                    page.state.show = true;
+                    page.state.msg = msg;
+                    page.state.type = type;
+                    page.state.cover = cover;
+                    page.state.title = title;
+                    page.state.bottom = bottom;
+                    page.state.center = center
+                },
+                onClosed: () => console.log('closed')
+            }
+        }
+
+
+        const handleOrderCenter = () => {
+            Taro.navigateTo({
+                url: '/package/pages/myOrder/index',
+            })
+        }
+        const handleGroup = (index) => {
+            console.log(index)
+            if (index == 3) {
+                Taro.navigateTo({
+                    url: '/package/pages/cardVoucherCenter/index',
+                })
+            } else {
+                console.log("23")
+                page.methods.openToast('text', '待开发中~')
+            }
+
+        }
+
         return {
-            ...toRefs(state)
+            page,
+
+            ...toRefs(state),
+            handleOrderCenter,
+            handleGroup
         }
     }
 }
@@ -134,6 +187,7 @@ export default {
 <style lang="scss">
 .person {
     padding-bottom: 180rpx;
+
     .interface {
         width: 100vw;
         height: 320rpx;
@@ -248,7 +302,8 @@ export default {
             width: 50rpx;
             height: 50rpx;
         }
-        .nut-cell__title{
+
+        .nut-cell__title {
             display: flex;
             justify-content: flex-start;
             flex-direction: row;

@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Address: typeof import('./src/components/address/address.vue')['default']
+    ComAddress: typeof import('./src/components/com-address/com-address.vue')['default']
     Content: typeof import('./src/components/content/index.vue')['default']
     GoodsBox: typeof import('./src/components/goodsBox.vue')['default']
     GoodSort: typeof import('./src/components/goodSort/goodSort.vue')['default']
@@ -27,6 +27,7 @@ declare module '@vue/runtime-core' {
     NutCountdown: typeof import('@nutui/nutui-taro')['Countdown']
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
+    NutImage: typeof import('@nutui/nutui-taro')['Image']
     NutInputNumber: typeof import('@nutui/nutui-taro')['InputNumber']
     NutList: typeof import('@nutui/nutui-taro')['List']
     NutPrice: typeof import('@nutui/nutui-taro')['Price']
@@ -36,11 +37,11 @@ declare module '@vue/runtime-core' {
     NutSku: typeof import('@nutui/nutui-taro')['Sku']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
-    NutSwitch: typeof import('@nutui/nutui-taro')['Switch']
     NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
     NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
     NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
+    NutToast: typeof import('@nutui/nutui-taro')['Toast']
     Search: typeof import('./src/components/search/search.vue')['default']
     Swiper: typeof import('./src/components/swiper.vue')['default']
     TabCompoents: typeof import('./src/components/tabs/tabCompoents.vue')['default']

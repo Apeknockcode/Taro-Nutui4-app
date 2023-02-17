@@ -67,6 +67,7 @@ view {
   font-size: $fontP20;
   color: $themeTextColor-3;
 }
-.btnStyle{
-  
+page :root{
+  --nut-toast-inner-padding:20rpx;
+  --nut-toast-inner-border-radius:10rpx;
 }

@@ -10,23 +10,28 @@
     <lastMinute />
     <advertImage :advImage="advImage" />
     <view class="goodsTabs">
-      <tabsCom />
+      <tabsComponents :listDate="listDate">
+        <template #list="{ tabItem, tabDate }">
+          <content :tabItem="tabItem.key" :tabDate="tabDate"></content>
+        </template>
+      </tabsComponents>
     </view>
   </view>
 </template>
 
 <script>
-import userSearch from "../../components/search/search.vue"
-import userAddress from "../../components/address/address.vue"
-import headerSwiper from "../../components/swiper"
-import goodSort from "../../components/goodSort/goodSort.vue"
-import discountZone from "./components/discountZone.vue"
+import content from "../../components/content/index.vue";
+import userSearch from "../../components/search/search.vue";
+import userAddress from "../../components/com-address/com-address.vue";
+import headerSwiper from "../../components/swiper";
+import goodSort from "../../components/goodSort/goodSort.vue";
+import discountZone from "./components/discountZone.vue";
 import lastMinute from "./components/lastMinute.vue";
-import advertImage from "./components/advertisement.vue"
-import tabsCom from "../../components/tabs/tabCompoents.vue"
-import { reactive, toRefs, ref } from 'vue';
+import advertImage from "./components/advertisement.vue";
+import tabsComponents from "../../components/tabs/tabCompoents.vue";
+import { reactive, toRefs, ref } from "vue";
 export default {
-  name: 'Index',
+  name: "Index",
   components: {
     headerSwiper,
     goodSort,
@@ -35,23 +40,51 @@ export default {
     discountZone,
     lastMinute,
     advertImage,
-    tabsCom
+    tabsComponents,
+    content,
   },
   setup() {
     const state = reactive({
-      searchValue: '',
-    })
-    const advImage = ref('https://gd-hbimg.huaban.com/8b78b8e8ef1369805af34e4e811a346867588c4410a857-plplFn_fw658')
+      searchValue: "",
+      listDate: [
+        {
+          title: "新品尝鲜",
+          key: 0,
+        },
+        {
+          title: "送亲子",
+          key: 1,
+        },
+        {
+          title: "送长辈",
+          key: 2,
+        },
+        {
+          title: "生日",
+          key: 3,
+        },
+        {
+          title: "聚会",
+          key: 4,
+        },
+        {
+          title: "下午茶",
+          key: 5,
+        },
+      ],
+    });
+    const advImage = ref(
+      "https://gd-hbimg.huaban.com/8b78b8e8ef1369805af34e4e811a346867588c4410a857-plplFn_fw658"
+    );
     return {
       ...toRefs(state),
-      advImage
-    }
-  }
-}
+      advImage,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
-
 .header-address {
   display: flex;
   padding: 0 10rpx 8rpx 10rpx;

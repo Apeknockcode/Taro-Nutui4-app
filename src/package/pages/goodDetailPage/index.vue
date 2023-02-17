@@ -61,7 +61,7 @@
                     <Right />
                 </template>
             </nut-cell>
-            <nut-cell class="info-item ch">
+            <nut-cell class="info-item ch" @click="handleWarezSize">
                 <template v-slot:title>
                     <view class="title">
                         <view class="des ch">已选</view>
@@ -115,7 +115,7 @@
 
             </view>
         </view>
-        <waresSku />
+        <waresSku :customState="customBySlot" />
         <waresTabbar />
     </view>
 </template>
@@ -141,12 +141,17 @@ export default {
         const state = reactive({
             page: 0,
             current: 1,
-            details: details
+            details: details,
+            customBySlot:false,
         });
         const changeSwiper = (index: number) => {
             state.current = index + 1;
         };
-        return { ...toRefs(state), changeSwiper };
+        const handleWarezSize = () => {
+            console.log('123123')
+            state.customBySlot = true
+        };
+        return { ...toRefs(state), changeSwiper, handleWarezSize };
     }
 }
 </script>

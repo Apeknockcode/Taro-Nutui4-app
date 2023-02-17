@@ -1,5 +1,5 @@
 <template>
-    
+
     <nut-sku v-model:visible="customBySlot" :sku="sku" :goods="goods" :btnOptions="['buy', 'cart']"
         @selectSku="selectSku" @clickBtnOperate="clickBtnOperate">
         <!-- 商品展示区，价格区域 -->
@@ -34,22 +34,48 @@
 
 </template>
 <script lang="ts">
-import { ref, reactive, onMounted, toRefs } from 'vue';
+import { ref, reactive, onMounted, toRefs, computed } from 'vue';
 import Taro from '@tarojs/taro'
 interface goodsTypes {
+    skuId: number,
     id: number;
     name: string;
     price: number | string;
+    imagePath: string
+}
+interface skuTypes {
+    id: number,
+    name: string,
+    list: [{
+        name: string,
+        id: number,
+        active: boolean,
+        disable: boolean
+    },
+    ]
+}
+interface dataTypes {
+    sku: Array<skuTypes>;
+    goods: goodsTypes
 }
 export default {
+    props: {
+        customState: {
+            type: Boolean,
+            default: false
+        },
+    },
     setup(props) {
-        console.log("props",props)
-        const customBySlot = ref(true);
+        console.log("props", props)
+        const customBySlot = computed(() => {
+            console.log('computed')
+            return props.customState
+        });
         const showAddressPopup = ref(false);
         const data = reactive({
             sku: [],
             goods: {} as goodsTypes
-        });
+        }) as dataTypes;
 
         const addressDesc = ref('(配送地会影响库存，请先确认)');
         const existAddress = ref([
@@ -95,8 +121,8 @@ export default {
             Taro.request({
                 url: 'https://storage.360buyimg.com/nutui/3x/data.js', //仅为示例，并非真实的接口地址
                 success: function (res) {
-                    console.log(res.data)
-                    const { Sku, Goods, imagePathMap } = res.data;
+                    console.log("onMounted", res.data as any)
+                    const { Sku, Goods } = res.data;  // imagePathMap
                     data.sku = Sku;
                     data.goods = Goods;
                 }
@@ -105,7 +131,7 @@ export default {
 
         // 切换规格类目
         const selectSku = (ss: string) => {
-            const { sku, skuIndex, parentSku, parentIndex } = ss;
+            const { sku, skuIndex, parentSku, parentIndex } = ss as any
             if (sku.disable) return false;
             data.sku[parentIndex].list.forEach((s) => {
                 s.active = s.id == sku.id;
@@ -113,11 +139,10 @@ export default {
             data.goods = {
                 skuId: sku.id,
                 price: '6002.10',
-                imagePath:
-                    '//img14.360buyimg.com/n4/jfs/t1/215845/12/3788/221990/618a5c4dEc71cb4c7/7bd6eb8d17830991.jpg'
+                imagePath: '//img14.360buyimg.com/n4/jfs/t1/215845/12/3788/221990/618a5c4dEc71cb4c7/7bd6eb8d17830991.jpg'
             };
         };
-        const selectedAddress = (prevExistAdd: any, nowExistAdd: any) => {
+        const selectedAddress = (_prevExistAdd: any, nowExistAdd: any) => {
             const { provinceName, countyName, cityName } = nowExistAdd;
             addressDesc.value = `${provinceName}${countyName}${cityName}`;
         };

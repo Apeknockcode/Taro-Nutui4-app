@@ -19,7 +19,7 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types"],
-    "types": ["@tarojs/components/vue3"]
+    "types": ["@tarojs/components/vue3","node"]
   },
   "include": ["./src", "./types", "components.d.ts"],
   "compileOnSave": false
