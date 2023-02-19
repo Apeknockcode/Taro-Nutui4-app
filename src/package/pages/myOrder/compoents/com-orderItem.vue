@@ -4,8 +4,10 @@
       <view class="order-number">订单号:8912313123123123</view>
       <view class="order-status">待付款</view>
     </view>
-    <comGoods />
-    <comGoods />
+    <view class="good-list">
+      <comGoods />
+      <comGoods />
+    </view>
     <view class="order-options">
       <view class="order-number">
         共 3 件商品,合计:
@@ -47,6 +49,14 @@ export default {
     .order-status {
       color: $themesColorOwner;
     }
+  }
+
+  .good-list {
+    width: 100%;
+    height: 165rpx;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
   }
   .order-options {
     display: flex;

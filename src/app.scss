@@ -35,8 +35,8 @@ view {
 // 文字超出隐藏
 .ellipsis-line {
   overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // 分割边框线
@@ -63,11 +63,21 @@ view {
 }
 
 // 价格icon
-.priceIcon{
+.priceIcon {
   font-size: $fontP20;
   color: $themeTextColor-3;
 }
-page :root{
-  --nut-toast-inner-padding:20rpx;
-  --nut-toast-inner-border-radius:10rpx;
+page :root {
+  --nut-toast-inner-padding: 20rpx;
+  --nut-toast-inner-border-radius: 10rpx;
+}
+
+// 粘性布局样式
+.nutSticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
 }

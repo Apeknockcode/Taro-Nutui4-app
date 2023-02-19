@@ -21,7 +21,8 @@ import {
   Col,
   Grid,
   GridItem,
-  Searchbar
+  Searchbar,
+  Sticky
 } from '@nutui/nutui-taro'
 
 import type {App} from 'vue'
@@ -51,4 +52,5 @@ export function setupComponents(app: App<Element>) {
     .use(Sku)
     .use(Tabs)
     .use(TabPane)
+    .use(Sticky)
 }

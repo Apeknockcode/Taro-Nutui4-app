@@ -9,6 +9,7 @@ specifiers:
   '@nutui/nutui-taro': ^4.0.0
   '@tarojs/cli': 3.5.12
   '@tarojs/components': 3.5.12
+  '@tarojs/extend': ^3.6.1
   '@tarojs/helper': 3.5.12
   '@tarojs/plugin-framework-react': ^3.5.12
   '@tarojs/plugin-framework-vue3': 3.5.12
@@ -54,6 +55,7 @@ dependencies:
   '@nutui/nutui': registry.npmmirror.com/@nutui/nutui/4.0.0
   '@nutui/nutui-taro': registry.npmmirror.com/@nutui/nutui-taro/4.0.0
   '@tarojs/components': registry.npmmirror.com/@tarojs/components/3.5.12_vue@3.2.45
+  '@tarojs/extend': registry.npmmirror.com/@tarojs/extend/3.6.1
   '@tarojs/helper': registry.npmmirror.com/@tarojs/helper/3.5.12
   '@tarojs/plugin-framework-react': registry.npmmirror.com/@tarojs/plugin-framework-react/3.5.12_vue@3.2.45
   '@tarojs/plugin-framework-vue3': registry.npmmirror.com/@tarojs/plugin-framework-vue3/3.5.12_vue@3.2.45
@@ -4220,6 +4222,12 @@ packages:
     transitivePeerDependencies:
       - '@types/webpack'
       - '@types/webpack-dev-server'
+
+  registry.npmmirror.com/@tarojs/extend/3.6.1:
+    resolution: {integrity: sha512-69tl0khStLUXQLawooVYCGXWfWy5yEjG4t5Aaomx+EC6H4P9Q3pu+gOWqCi/hEXDQCcDNkoLzLjuwKXtbj0Jxg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tarojs/extend/-/extend-3.6.1.tgz}
+    name: '@tarojs/extend'
+    version: 3.6.1
+    dev: false
 
   registry.npmmirror.com/@tarojs/helper/3.5.12:
     resolution: {integrity: sha512-jtF4LiVciEoh71uxHZpDkPLne05viTHSOS+Iy5OSH21oJ6wDby9UH4rEtUGsv0aNP2BlxWv74FiheOlZ5ZpysA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tarojs/helper/-/helper-3.5.12.tgz}
