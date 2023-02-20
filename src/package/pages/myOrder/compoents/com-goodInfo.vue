@@ -28,7 +28,7 @@ export default {
 <style lang="scss">
 .goods {
   display: flex;
-  margin: 20rpx 0;
+  padding: 20rpx 0px;
   .goods-image {
     .main-image {
       width: 100rpx;

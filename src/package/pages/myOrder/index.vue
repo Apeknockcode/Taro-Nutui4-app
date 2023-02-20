@@ -7,7 +7,7 @@
             </template>
           </nut-list> -->
         <view class="boxContent">
-          <view class="box" v-for="item in 20" :key="'box' + item">
+          <view class="box" v-for="item in 20" :key="'box' + item" @click="handleWaresDetails">
             <view class="divider"></view>
             <orderItem :listItem="item" :tabItem="tabItem" :tabDate="tabDate"></orderItem>
           </view>
@@ -21,7 +21,7 @@
 import tabsComponents from "../../../components/tabs/tabCompoents.vue";
 import orderItem from "./compoents/com-orderItem.vue";
 import { useReachBottom } from "@tarojs/taro";
-
+import Taro from "@tarojs/taro"
 const tabsList = [
   {
     title: "全部",
@@ -52,6 +52,11 @@ const tabsList = [
 useReachBottom(() => {
   console.log("order - useReachBottom");
 });
+const handleWaresDetails = () => {
+  Taro.navigateTo({
+     url: '/package/pages/orderDetails/index'
+  });
+}
 </script>
 
 <style lang="scss">

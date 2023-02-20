@@ -14,7 +14,9 @@ export default defineAppConfig({
         "pages/cardVoucherCenter/index",
         "pages/myOrder/index",
         "pages/orderResult/index",
-        "pages/order/index"
+        "pages/orderDetails/index",
+        "pages/order/index",
+        "pages/register/index"
       ],
       // "independent": true
     }

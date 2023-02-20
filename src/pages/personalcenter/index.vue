@@ -10,7 +10,7 @@
                     派大星
                 </view>
             </view>
-            <view class="Sign">
+            <view class="Sign" @click="handleRegister">
                 <Date /> 签到有礼
             </view>
             <view class="member">
@@ -172,13 +172,19 @@ export default {
             }
 
         }
+        const handleRegister = () => { 
+            Taro.navigateTo({
+                 url: '/package/pages/register/index'
+            });
+        }
 
         return {
             page,
 
             ...toRefs(state),
             handleOrderCenter,
-            handleGroup
+            handleGroup,
+            handleRegister
         }
     }
 }

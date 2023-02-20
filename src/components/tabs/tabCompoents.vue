@@ -69,7 +69,7 @@ export default {
                     }
                 })
                 implementStatue.value = true
-            }, 100)
+            }, 10)
 
 
 
