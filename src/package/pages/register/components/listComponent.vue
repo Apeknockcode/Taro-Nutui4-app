@@ -1,16 +1,16 @@
 
 <template>
-    <nut-row :gutter="20" class="contentGoods" type="flex" flex-wrap="wrap" justify="space-around" >
+    <nut-row :gutter="20" class="contentGoods" type="flex" flex-wrap="wrap" justify="space-around">
         <nut-col :span="12" v-for="item in 10">
-            <goodsBox />
+            <recommendGoods />
         </nut-col>
     </nut-row>
 </template>
 <script>
 import { computed } from "vue";
-import goodsBox from "../goodsBox.vue"
+import recommendGoods from "../components/recommendGoods.vue"
 export default {
-    props: { 
+    props: {
         key: {
             type: Number,
             default: 0
@@ -21,7 +21,7 @@ export default {
         }
     },
     components: {
-        goodsBox
+        recommendGoods
     },
 
     setup(props, ctx) {
@@ -36,33 +36,33 @@ export default {
 }
 </script>
 <style lang="scss">
-
-.nut-tab-pane{
+.nut-tab-pane {
     padding: 10rpx 10rpx !important;
 }
-.contentGoods{
-    .nut-col-gutter:first-child{
+
+.contentGoods {
+    .nut-col-gutter:first-child {
         padding-left: 20rpx !important;
     }
-    .nut-col-gutter:last-child{
+
+    .nut-col-gutter:last-child {
         padding-right: 20rpx !important;
     }
-    .goodsBox {
-    width: 100%;
-    height: auto;
-    min-height: 440rpx;
-    border-radius: 12rpx;
 
-    .goods-images {
+    .goodsBox {
         width: 100%;
         height: auto;
-        min-height: calc(400rpx - 60rpx);
-        background: #c3c0c0;
-        border-radius: 12rpx 12rpx 0 0;
-        margin-bottom: 10rpx;
+        min-height: 440rpx;
+        border-radius: 12rpx;
+
+        .goods-images {
+            width: 100%;
+            height: auto;
+            min-height: calc(400rpx - 60rpx);
+            background: #c3c0c0;
+            border-radius: 12rpx 12rpx 0 0;
+            margin-bottom: 10rpx;
+        }
     }
 }
-}
-
-
 </style>
