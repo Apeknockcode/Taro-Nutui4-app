@@ -18,7 +18,9 @@
                         立即签到 +10
                     </view>
                 </view>
-                <view></view>
+                <view class='progress'>
+                    <record />
+                </view>
             </view>
         </view>
         <view class="recommend-list">
@@ -41,6 +43,7 @@
 
 <script setup lang="ts">
 import { RectRight } from '@nutui/icons-vue-taro';
+import record from "./components/record.vue"
 import listComponent from "./components/listComponent.vue"
 </script>
 
@@ -87,6 +90,12 @@ import listComponent from "./components/listComponent.vue"
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
+            }
+
+            .progress {
+                height: 80%;
+                display: flex;
                 align-items: center;
             }
 
